@@ -1,4 +1,4 @@
-package org.example.silver3.test11726;
+package org.example.silver3.test11727;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,11 +15,12 @@ public class Main {
         dp[0] = 0;
         dp[1] = 1;
 
-        if(n > 2)
-            dp[2] = 2;
+        if(n > 1){
+            dp[2] = 3;
+        }
 
         for(int i=3; i<=n; i++){
-            dp[i] = (dp[i-1] + dp[i-2]) % 10007;
+            dp[i] = (dp[i-1] + dp[i-2] * 2) % 10007;
         }
 
         System.out.println(dp[n]);
