@@ -1,4 +1,4 @@
-package org.example.silver3.test15651;
+package org.example.silver3.test15652;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,11 +19,11 @@ public class Main {
         arr = new int[m];
         visit = new boolean[n+1];
 
-        dfs(0, arr);
+        dfs(0, arr, 1);
         System.out.println(sb);
     }
 
-    public static void dfs(int L, int[] arr){
+    public static void dfs(int L, int[] arr, int start){
         if(L == m){
             for(int i=0; i<m; i++){
                 sb.append(arr[i] + " ");
@@ -32,10 +32,9 @@ public class Main {
             return;
         }
 
-        for(int i=1; i<=n; i++) {
+        for(int i=start; i<=n; i++) {
             arr[L] = i;
-            dfs(L + 1, arr);
+            dfs(L + 1, arr, i);
         }
     }
 }
-
